@@ -3,15 +3,21 @@
 #
 # The generic product target doesn't have any hardware-specific pieces.
 # Architecture
-TARGET_ARCH := arm
+# Primary Arch
+TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_VARIANT := cortex-a53
+
+# Secondary Arch
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 TARGET_USES_64_BIT_BINDER := true
 ENABLE_CPUSETS := true
-TARGET_SUPPORTS_64_BIT_APPS := true
 
 # Platform
 BOARD_VENDOR := amlogic
@@ -60,7 +66,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_AVB_ENABLE := false
 
 # Kernel
-
+BOARD_KERNEL_IMAGE_NAME := Image.lz4
 BOARD_KERNEL_OFFSET      := 0x1080000
 BOARD_KERNEL_TAGS_OFFSET := 0x1000000
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
