@@ -1,7 +1,7 @@
 PRODUCT_SOONG_NAMESPACES += device/amlogic/franklin
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/amlogic/franklin-kernel/Image.lz4-4.19
+LOCAL_KERNEL := device/amlogic/franklin/prebuilt/Image.lz4-4.19
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -10,7 +10,7 @@ PRODUCT_COPY_FILES +=  $(LOCAL_KERNEL):kernel
 
 PRODUCT_PROPERTY_OVERRIDES += ro.product.device=franklin
 
-BOARD_KERNEL_DTB := device/amlogic/franklin-kernel
+BOARD_KERNEL_DTB := device/amlogic/franklin/prebuilt
 
 ifeq ($(TARGET_PREBUILT_DTB),)
 LOCAL_DTB := $(BOARD_KERNEL_DTB)
